@@ -1,9 +1,9 @@
-package com.example.smena.dao
+package com.example.roomChat.dao
 
 import androidx.lifecycle.LiveData
 import androidx.room.*
-import com.example.smena.model.Chat
-import com.example.smena.model.ChatsWithUsersAndLastMessage
+import com.example.roomChat.model.Chat
+import com.example.roomChat.model.ChatsWithUsersAndLastMessage
 
 @Dao
 interface ChatsDao {

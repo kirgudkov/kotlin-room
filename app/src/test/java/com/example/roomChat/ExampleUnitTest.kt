@@ -1,4 +1,4 @@
-package com.example.smena
+package com.example.roomChat
 
 import org.junit.Test
 

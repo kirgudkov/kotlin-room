@@ -1,10 +1,10 @@
-package com.example.smena.dao
+package com.example.roomChat.dao
 
 import androidx.room.Dao
 import androidx.room.Insert
 import androidx.room.OnConflictStrategy
 import androidx.room.Query
-import com.example.smena.model.User
+import com.example.roomChat.model.User
 
 @Dao
 interface UserDao {

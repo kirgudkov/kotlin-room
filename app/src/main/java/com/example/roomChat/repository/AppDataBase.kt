@@ -1,15 +1,15 @@
-package com.example.smena.repository
+package com.example.roomChat.repository
 
 import android.content.Context
 import androidx.room.RoomDatabase
 import androidx.room.Database
 import androidx.room.Room
-import com.example.smena.dao.ChatsDao
-import com.example.smena.dao.MessagesDao
-import com.example.smena.dao.UserDao
-import com.example.smena.model.Chat
-import com.example.smena.model.Message
-import com.example.smena.model.User
+import com.example.roomChat.dao.ChatsDao
+import com.example.roomChat.dao.MessagesDao
+import com.example.roomChat.dao.UserDao
+import com.example.roomChat.model.Chat
+import com.example.roomChat.model.Message
+import com.example.roomChat.model.User
 
 @Database(entities = [Message::class, User::class, Chat::class], version = 1, exportSchema = false)
 abstract class AppDatabase : RoomDatabase() {

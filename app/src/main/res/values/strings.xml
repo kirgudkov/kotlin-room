@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">smena</string>
+    <string name="app_name">Room chat</string>
     <string name="send">send</string>
     <string name="hint">Type something</string>
     <string name="chats">Chats</string>

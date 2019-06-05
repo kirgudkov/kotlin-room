@@ -1,19 +1,19 @@
-package com.example.smena
+package com.example.roomChat
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.smena.model.Message
-import com.example.smena.adapter.MessagesAdapter
+import com.example.roomChat.model.Message
+import com.example.roomChat.adapter.MessagesAdapter
 import kotlinx.android.synthetic.main.activity_chat.*
 import com.bumptech.glide.Glide
 import com.bumptech.glide.load.resource.drawable.DrawableTransitionOptions
 import com.bumptech.glide.request.RequestOptions
-import com.example.smena.dao.ChatsDao
-import com.example.smena.dao.MessagesDao
-import com.example.smena.model.Chat
-import com.example.smena.model.ChatsWithUsersAndLastMessage
+import com.example.roomChat.dao.ChatsDao
+import com.example.roomChat.dao.MessagesDao
+import com.example.roomChat.model.Chat
+import com.example.roomChat.model.ChatsWithUsersAndLastMessage
 import kotlinx.coroutines.*
 
 

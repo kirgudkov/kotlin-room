@@ -1,4 +1,4 @@
-package com.example.smena
+package com.example.roomChat
 
 import androidx.test.InstrumentationRegistry
 import androidx.test.runner.AndroidJUnit4

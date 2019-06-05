@@ -1,4 +1,4 @@
-package com.example.smena.model
+package com.example.roomChat.model
 
 import androidx.room.ColumnInfo
 import androidx.room.Relation

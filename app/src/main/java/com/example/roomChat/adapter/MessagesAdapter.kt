@@ -1,12 +1,12 @@
-package com.example.smena.adapter
+package com.example.roomChat.adapter
 
 import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.example.smena.R
-import com.example.smena.model.Message
+import com.example.roomChat.R
+import com.example.roomChat.model.Message
 import kotlinx.android.synthetic.main.message_list_item.view.*
 
 class MessagesAdapter(private val items: ArrayList<Message>, private val context: Context) :

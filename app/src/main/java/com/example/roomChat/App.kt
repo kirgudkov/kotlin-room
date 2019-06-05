@@ -1,7 +1,7 @@
-package com.example.smena
+package com.example.roomChat
 
 import android.app.Application
-import com.example.smena.repository.AppDatabase
+import com.example.roomChat.repository.AppDatabase
 
 class App : Application() {
 

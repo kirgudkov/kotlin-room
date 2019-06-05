@@ -1,17 +1,15 @@
-package com.example.smena.adapter
+package com.example.roomChat.adapter
 
 import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.lifecycle.LiveData
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.bumptech.glide.load.resource.drawable.DrawableTransitionOptions.withCrossFade
 import com.bumptech.glide.request.RequestOptions
-import com.example.smena.R
-import com.example.smena.model.Chat
-import com.example.smena.model.ChatsWithUsersAndLastMessage
+import com.example.roomChat.R
+import com.example.roomChat.model.ChatsWithUsersAndLastMessage
 import kotlinx.android.synthetic.main.chat_list_item.view.*
 
 class ChatListAdapter(

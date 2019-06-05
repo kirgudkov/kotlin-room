@@ -1,4 +1,4 @@
-package com.example.smena.model
+package com.example.roomChat.model
 
 import androidx.room.Entity
 import androidx.room.Index
