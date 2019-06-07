@@ -23,6 +23,7 @@
                 android:gravity="center_vertical"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
+
             <ImageView
                     android:id="@+id/back"
                     android:layout_width="24dp"
@@ -53,56 +54,70 @@
     <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/messagesRV"
             android:orientation="horizontal"
+            android:background="#f5f5f5"
             android:layout_width="match_parent"
             android:layout_height="0dp"
+            tools:listitem="@layout/outgoing_message_list_item"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintBottom_toTopOf="@+id/input_bar"
             app:layout_constraintTop_toBottomOf="@+id/toolbar"/>
 
     <LinearLayout
-            android:id="@+id/input_bar"
-            android:elevation="4dp"
-            android:gravity="center_vertical"
-            android:layout_margin="8dp"
-            android:background="@drawable/input_bar_background"
             android:orientation="horizontal"
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
+            android:id="@+id/input_bar"
+            android:gravity="center_vertical"
+            android:background="#f5f5f5"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent">
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
 
-        <EditText
-                android:labelFor="@+id/button"
-                android:hint="@string/hint"
-                android:background="@null"
-                android:layout_weight="1"
+        <LinearLayout
+                android:layout_marginBottom="8dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="14dp"
+                android:layout_marginStart="8dp"
+                android:elevation="4dp"
+                android:background="@drawable/input_bar_background"
+                android:orientation="horizontal"
                 android:layout_width="0dp"
-                android:layout_height="48dp"
-                android:paddingStart="20dp"
-                android:paddingEnd="20dp"
-                android:paddingLeft="20dp"
-                android:paddingRight="20dp"
-                android:inputType="textPersonName"
-                android:text=""
-                android:ems="10"
-                android:autofillHints="@string/hint"
-                android:id="@+id/editText"
-                tools:targetApi="o"/>
+                android:layout_weight="1"
+                android:layout_height="42dp">
+
+            <EditText
+                    android:labelFor="@+id/button"
+                    android:hint="@string/hint"
+                    android:background="@null"
+                    android:layout_width="match_parent"
+                    android:textSize="14sp"
+                    android:layout_height="42dp"
+                    android:paddingStart="20dp"
+                    android:paddingEnd="20dp"
+                    android:paddingLeft="20dp"
+                    android:paddingRight="20dp"
+                    android:inputType="textPersonName"
+                    android:text=""
+                    android:ems="10"
+                    android:autofillHints="@string/hint"
+                    android:id="@+id/editText"
+                    tools:targetApi="o"/>
+        </LinearLayout>
 
         <Button
-                android:text="@string/send"
+                android:text=""
+                android:elevation="6dp"
                 android:textColor="@android:color/white"
                 android:drawablePadding="12dp"
-                android:paddingLeft="8dp"
                 android:layout_marginEnd="8dp"
-                android:paddingRight="8dp"
-                android:background="@android:color/transparent"
+                android:paddingRight="7dp"
+                android:background="@drawable/send_button"
                 android:drawableEnd="@drawable/ic_send_black_24dp"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
                 android:id="@+id/button"/>
+
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

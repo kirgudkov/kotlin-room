@@ -54,16 +54,7 @@ class ChatList : AppCompatActivity() {
     }
 
     private fun fetchData() {
-        println("------------------------------------------")
-        println(chatsDao!!.getAll())
-        println("------------------------------------------")
-        val chats = chatsDao!!.getChatsWithUser()
-        println(chats)
-        println("------------------------------------------")
-
-        chats.observe(this, Observer {
-            chatListAdapter!!.replaceAll(it)
-        })
+        chatsDao!!.getChatsWithUser().observe(this, Observer { chatListAdapter!!.replaceAll(it) })
     }
 
     private suspend fun initData() {
@@ -79,16 +70,16 @@ class ChatList : AppCompatActivity() {
         )
         val chat = Chat(1, tony.id)
         val chat2 = Chat(2, elon.id)
-        val message1 = Message(1, chat.id, "Heeey! It's me, Tony!", tony.id)
-        val message2 = Message(2, chat.id, "So whats up man?)", tony.id)
-        val message3 = Message(3, chat2.id, "Hi, it's Elon", elon.id)
+        val message1 = Message(1, chat.id, "Hey! It's me, Tony!", tony.id, true)
+        val message2 = Message(2, chat.id, "So whats up man?)", tony.id, true)
+        val message3 = Message(3, chat2.id, "Hi, it's Elon", elon.id, true)
 
-//        userDao!!.insert(elon)
-//        userDao!!.insert(tony)
-//        chatsDao!!.insert(chat)
-//        chatsDao!!.insert(chat2)
-//        messageDao!!.insert(message1)
-//        messageDao!!.insert(message2)
+        userDao!!.insert(elon)
+        userDao!!.insert(tony)
+        chatsDao!!.insert(chat)
+        chatsDao!!.insert(chat2)
+        messageDao!!.insert(message1)
+        messageDao!!.insert(message2)
         messageDao!!.insert(message3)
     }
 }

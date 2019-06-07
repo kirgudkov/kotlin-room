@@ -16,7 +16,6 @@ import com.example.roomChat.model.Chat
 import com.example.roomChat.model.ChatsWithUsersAndLastMessage
 import kotlinx.coroutines.*
 
-
 class ChatActivity : AppCompatActivity() {
 
     private val messages: ArrayList<Message> = ArrayList()
@@ -35,8 +34,7 @@ class ChatActivity : AppCompatActivity() {
 
         val last = messagesDao!!.getLast(chat.id)
         last.observe(this, Observer {
-            if (last.value != null)
-                messageListAdapter!!.add(last.value!!)
+            if (last.value != null) messageListAdapter!!.add(last.value!!)
         })
 
         messagesRV.layoutManager = LinearLayoutManager(this)
@@ -45,19 +43,23 @@ class ChatActivity : AppCompatActivity() {
         back.setOnClickListener { finish() }
 
         button.setOnClickListener {
-            runBlocking {
-                messagesDao!!.insert(
-                    Message(
-                        if (messages.size != 0) messages[messages.size - 1].id + 1 else 0,
-                        chat.id,
-                        editText.text.toString(),
-                        chat.userId
+            val text = editText.text.toString()
+
+            if (text.isNotEmpty()) {
+                runBlocking {
+                    messagesDao!!.insert(
+                        Message(
+                            if (messages.size != 0) messages.last().id + 1 else 0,
+                            chat.id,
+                            editText.text.toString(),
+                            chat.userId,
+                            false
+                        )
                     )
-                )
-                editText.text = null
+                    editText.text = null
+                }
             }
         }
-
     }
 
     private fun bindViews(chat: List<ChatsWithUsersAndLastMessage>) {

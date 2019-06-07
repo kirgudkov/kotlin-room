@@ -22,5 +22,6 @@ data class Message(
     val chatId: Int,
     val text: String,
     @ColumnInfo(name = "sender_id")
-    val senderId: Int
+    val senderId: Int,
+    val incoming: Boolean
 ) : Serializable
