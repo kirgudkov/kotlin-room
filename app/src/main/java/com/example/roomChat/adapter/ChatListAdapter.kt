@@ -13,13 +13,14 @@ import com.example.roomChat.model.ChatsWithUsersAndLastMessage
 import kotlinx.android.synthetic.main.chat_list_item.view.*
 
 class ChatListAdapter(
-    private val items: ArrayList<ChatsWithUsersAndLastMessage>,
     private val context: Context,
     private val onItemClick: ((ChatsWithUsersAndLastMessage) -> Unit)
 ) :
     RecyclerView.Adapter<ChatListAdapter.ChatViewHolder>() {
 
-    fun addAll(items: List<ChatsWithUsersAndLastMessage>) {
+    private val items: ArrayList<ChatsWithUsersAndLastMessage> = ArrayList()
+
+    private fun addAll(items: List<ChatsWithUsersAndLastMessage>) {
         this.items.addAll(items.toCollection(ArrayList()))
         notifyDataSetChanged()
     }
@@ -40,12 +41,12 @@ class ChatListAdapter(
     }
 
     override fun onBindViewHolder(holder: ChatViewHolder, position: Int) {
-        holder.name.text = items[position].users[0].name
+        holder.name.text = items[position].user?.name
         if (items[position].messages.isNotEmpty()) {
             holder.message.text = items[position].messages.last().text
         }
         Glide.with(context)
-            .load(items[position].users[0].avatar)
+            .load(items[position].user?.avatar)
             .apply(RequestOptions.circleCropTransform())
             .transition(withCrossFade())
             .into(holder.avatar)
@@ -58,7 +59,7 @@ class ChatListAdapter(
     inner class ChatViewHolder(view: View) : RecyclerView.ViewHolder(view) {
 
         init {
-            itemView.setOnClickListener { onItemClick.invoke(items[adapterPosition]) }
+            itemView.setOnClickListener { onItemClick(items[adapterPosition]) }
         }
 
         val name = view.name!!
